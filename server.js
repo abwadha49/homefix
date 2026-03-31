@@ -3,6 +3,11 @@ const mysql = require('mysql2');
 const session = require('express-session');
 const app = express();
 
+app.use(express.static(__dirname));
+app.use(express.urlencoded({ extended: true }));
+
+
+
 const db = mysql.createConnection({
    host: "interchange.proxy.rlwy.net",
     user: "root",
@@ -10,6 +15,7 @@ const db = mysql.createConnection({
     database: "railway",
     port: 36574
 });
+
 
 db.connect(err => {
     if (err) throw err;
