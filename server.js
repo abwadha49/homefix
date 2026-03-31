@@ -4,10 +4,11 @@ const session = require('express-session');
 const app = express();
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'homefix'
+   host: "containers-us-west-123.railway.app",
+    user: "root",
+    password: "cfkCkLCNqCMsbzKLYqlYkjhUyNdhHkVs",
+    database: "railway",
+    port: 12345
 });
 
 db.connect(err => {
