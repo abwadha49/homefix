@@ -4,7 +4,7 @@ const session = require('express-session');
 const app = express();
 
 const db = mysql.createConnection({
-   host: "mysql://root:cfkCkLCNqCMsbzKLYqlYkjhUyNdhHkVs@interchange.proxy.rlwy.net:36574/railway",
+   host: "interchange.proxy.rlwy.net",
     user: "root",
     password: "cfkCkLCNqCMsbzKLYqlYkjhUyNdhHkVs",
     database: "railway",
