@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>My Bookings</h2>
+
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody id="bookingTable"></tbody>
+        </table>
+
+        <a href="/dashboard"><button>Back</button></a>
+    </div>
+
+    <script>
+        fetch('/my-bookings')
+            .then(res => res.json())
+            .then(data => {
+                let table = document.getElementById('bookingTable');
+                data.forEach(b => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${b.service}</td>
+                            <td>${b.date}</td>
+                            <td>${b.time}</td>
+                            <td>${b.notes || ''}</td>
+                        </tr>
+                    `;
+                });
+            });
+    </script>
+</body>
+</html>
