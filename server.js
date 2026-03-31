@@ -4,11 +4,11 @@ const session = require('express-session');
 const app = express();
 
 const db = mysql.createConnection({
-   host: "containers-us-west-123.railway.app",
+   host: "mysql.railway.internal",
     user: "root",
     password: "cfkCkLCNqCMsbzKLYqlYkjhUyNdhHkVs",
     database: "railway",
-    port: 12345
+    port: 3306
 });
 
 db.connect(err => {
